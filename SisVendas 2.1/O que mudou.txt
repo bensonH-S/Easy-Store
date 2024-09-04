@@ -1,0 +1,4 @@
+Nessa Versão Foi melhorada o PDV é o Menu na tela Princiapl
+
+PDV: Assim que escolher selecionar o produto que clicar em Tab ele incluir o valor por Itém.
+Menu: no menu foi feito uma administração melhor de toda as abas que envolvar sainda e entrada de dinheito da Empresa.

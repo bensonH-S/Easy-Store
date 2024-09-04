@@ -1,0 +1,6 @@
+Nessa versão, foi feita uma Módificação significativa da grande parte do Sistema tais como:
+
+Nova tela Principal.
+Novo PDV.
+Validação do Sistema, isso significa que pode ser alugado. com vencimento definido conforme o Contrato de cada cliente 
+Melhoras da perfomace do Sistema.

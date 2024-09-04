@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Teste1_subreport1" language="groovy" pageWidth="572" pageHeight="752" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="4b32e5ea-b04b-48ea-a238-f65aa266e919">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     empresa.`nome` AS empresa_nome,
+     empresa.`nomefantasia` AS empresa_nomefantasia,
+     empresa.`rua` AS empresa_rua,
+     empresa.`bairro` AS empresa_bairro,
+     empresa.`cidade` AS empresa_cidade,
+     empresa.`telefone` AS empresa_telefone
+FROM
+     `empresa` empresa]]>
+	</queryString>
+	<field name="empresa_nome" class="java.lang.String"/>
+	<field name="empresa_nomefantasia" class="java.lang.String"/>
+	<field name="empresa_rua" class="java.lang.String"/>
+	<field name="empresa_bairro" class="java.lang.String"/>
+	<field name="empresa_cidade" class="java.lang.String"/>
+	<field name="empresa_telefone" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="93" height="20" uuid="12ad9f2a-c3ec-431c-a7e6-d347da06e4bb"/>
+				<text><![CDATA[Nome da Empresa:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="93" y="0" width="479" height="20" uuid="805d5647-5589-4179-9888-30307c64e698"/>
+				<textFieldExpression><![CDATA[$F{empresa_nome}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

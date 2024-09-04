@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="parcelamento" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c94d7238-57c4-4513-ac66-2fc28d88bc2a">
+	<property name="template.type" value="columnar"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#000000" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="COD" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\cyro cruz\\Documents\\NetBeansProjects\\SisVendas\\forms\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from parcela_venda inner join venda on parcela_venda.cod_venda = venda.id_venda inner join clientes on venda.id_cliente = clientes.id_cliente inner join bairro on clientes.id_bairro = bairro.id_bairro where cod_venda = $P!{COD}]]>
+	</queryString>
+	<field name="id_parc_venda" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cod_venda" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valor_venda" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valor_total" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="numero_parcela" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valor_parc" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="datavenc" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="estado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valor_parcial" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valor_resta" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pago" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_cliente" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="datavenda" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="datarecebimento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_venda" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="data_venda" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipo_pagamento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_caixa" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="vendedor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="status" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome_cliente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="endereco_cliente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rg_cliente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpf_cliente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_bairro" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefone" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="limite_compra" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="email" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apelido" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome_bairro" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_cidade" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="118" splitType="Stretch">
+			<line>
+				<reportElement x="2" y="113" width="551" height="1" uuid="4bcf6834-9063-4346-a133-7e41ced63292"/>
+				<graphicElement>
+					<pen lineStyle="Double"/>
+				</graphicElement>
+			</line>
+			<subreport>
+				<reportElement x="15" y="0" width="528" height="87" uuid="b3e0b6e3-a9c9-41af-8908-3894f6ba047d"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "parcelamento_subreport2.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="130" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="2" y="127" width="551" height="1" uuid="16092408-6f3a-4c7e-acbd-614d11a5af43"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="167" y="73" width="41" height="18" forecolor="#000000" backcolor="#000000" uuid="c36f6d96-9b04-4063-9a4d-a442ebf548f0"/>
+				<textElement textAlignment="Left">
+					<font fontName="Verdana" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Doc :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="167" y="91" width="34" height="18" forecolor="#000000" uuid="57b5654c-eb60-4af4-bd0b-41c9138edf1c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Verdana" size="8" isBold="false" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cod_venda}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="249" y="73" width="65" height="18" forecolor="#000000" backcolor="#000000" uuid="f84b91ad-63fd-40f9-bbcb-a254f90c8371"/>
+				<textElement textAlignment="Center">
+					<font fontName="Verdana" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Parcela :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="249" y="91" width="65" height="18" forecolor="#000000" uuid="32cf0271-7880-4934-94b5-daec6a2a26db"/>
+				<textElement textAlignment="Center">
+					<font fontName="Verdana" size="8" isBold="false" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numero_parcela}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="354" y="73" width="81" height="20" forecolor="#000000" backcolor="#000000" uuid="2b83aedf-4300-444d-a40e-e3e7636fb33d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Verdana" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor a Pagar :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" pattern="###0.00;-###0.00" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="353" y="91" width="82" height="18" forecolor="#000000" uuid="8b1136c1-9b27-46c0-a7bb-cd22ac88e36b"/>
+				<textElement textAlignment="Center">
+					<font fontName="Verdana" size="8" isBold="false" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valor_parc}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="454" y="73" width="99" height="20" forecolor="#000000" backcolor="#000000" uuid="5dc2ad76-b9f2-4503-853c-e7cf6f179479"/>
+				<textElement textAlignment="Center">
+					<font fontName="Verdana" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data Vencimento :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="454" y="93" width="99" height="18" forecolor="#000000" uuid="54a69ba3-bad1-4496-acbd-519994992b7f"/>
+				<textElement textAlignment="Center">
+					<font fontName="Verdana" size="8" isBold="false" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{datavenc}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="397" y="44" width="81" height="18" forecolor="#000000" backcolor="#000000" uuid="d14122ee-2150-46be-af31-fa8a3ae3348d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Verdana" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data da Venda :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="478" y="46" width="75" height="17" forecolor="#000000" uuid="88ec3e64-71e5-47eb-8cc9-09fee13dc9f9"/>
+				<textElement textAlignment="Center">
+					<font fontName="Verdana" size="8" isBold="false" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{datavenda}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="167" y="9" width="41" height="20" forecolor="#000000" backcolor="#000000" uuid="ebb1b05a-32ca-4c42-9abf-1178a324cd7c"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Verdana" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="208" y="13" width="189" height="16" forecolor="#000000" uuid="ddd6253d-0a3f-425a-b41e-e283a7a0a0c4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome_cliente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="167" y="44" width="31" height="18" forecolor="#000000" backcolor="#000000" uuid="4d1beb9b-3f59-4f67-846e-46c61cf4b6e9"/>
+				<textElement textAlignment="Left">
+					<font fontName="Verdana" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rua :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="198" y="46" width="167" height="17" forecolor="#000000" uuid="7aeca415-92be-456d-9d63-789b719d424b"/>
+				<textElement>
+					<font fontName="Verdana" size="8" isBold="false" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{endereco_cliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="445" y="16" width="108" height="16" forecolor="#000000" uuid="e39ad013-1374-4d7e-99e8-dd805062a1a0"/>
+				<textElement>
+					<font fontName="Verdana" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome_bairro}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="397" y="14" width="38" height="18" forecolor="#000000" uuid="7d859a97-4282-434a-bb64-1acd9af7c18e"/>
+				<textElement textAlignment="Left">
+					<font fontName="Verdana" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bairro :]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="15" y="9" width="122" height="100" uuid="ed3b1f7d-1b12-490d-926b-0fbe3b623845"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "parcelamento_subreport1.jasper"]]></subreportExpression>
+			</subreport>
+			<line>
+				<reportElement x="162" y="34" width="391" height="1" uuid="ea62941a-8aab-4070-99fb-a255c2bd79c3"/>
+			</line>
+			<line>
+				<reportElement x="163" y="62" width="391" height="1" uuid="3f3bc6e1-b5e6-470a-860a-0fc25368841e"/>
+			</line>
+			<line>
+				<reportElement x="147" y="4" width="1" height="118" uuid="a12b5b16-5a0d-4521-bcc7-685f67087533"/>
+				<graphicElement>
+					<pen lineStyle="Dotted" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="b9086603-4b85-44ee-86a9-fee300f9abc7"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="13" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="2" y="0" width="555" height="13" forecolor="#D0B48E" backcolor="#FFFFFF" uuid="d73dab69-f3ec-4c24-8512-020bacf9b484"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="512" y="0" width="40" height="13" forecolor="#666666" uuid="ce969e0e-6282-4516-9a40-26afae65908e"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="433" y="0" width="80" height="13" forecolor="#666666" uuid="53f77f1b-7b4d-4e69-a43d-39a6e03df3b7"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de "]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="2" y="0" width="197" height="13" forecolor="#666666" uuid="3ee48edb-bda3-45b4-bb3b-1c6d4f3c5873"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

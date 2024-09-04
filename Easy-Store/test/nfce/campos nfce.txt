@@ -1,0 +1,28 @@
+emitente
+-campo codigo ibge da uf com 2 caracteres notnull
+-campo codigo ibge da cidade com 7 digitos notnull
+-campo inscricao estadual de 2 a 14 carcteres notnull
+-campo inscricao municipal de 1 a 15 digitos
+-campo cnae de 7 digitos
+-campo crt com 1 caracters nas opcoes (1,2,3) notnull
+
+destinatario 
+-campo inscricao estadual de 2 a 14 carcteres *
+-campo inscricao municipal de 1 a 15 digitos *
+-campo de numero da residencia 1 a 60 carteres 
+-campo de complemento 1 a 60 carcteres
+-campo IBGE 7 digitos
+-campo numero CEP 8 digitos
+
+produto 
+-campo ncm de 2 ou 8 digitos notnull
+-campo cest de 7 digitos
+-campo cfop 4 digitos
+-campo aliquota ibpt federal
+-campo aliquota ibpt estadual
+-campo aliquota ibpt municipal
+-campo cst_csosn icms 2 ou 3 caracteres notnull
+-cst pis 2 ou 3 caracteres notnull
+-cst cofins 2 ou 3 caracteres notnull
+
+

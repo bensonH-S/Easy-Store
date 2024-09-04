@@ -1,0 +1,90 @@
+	
+Histórico de alterção do Sistema Easy-Store
+
+
+1º: adicionado nova função: todo usuario vendedor agora não pode da mais desconto sem uma senha de administrador,
+a alterção foi feito no código é no Banco de dados.
+
+No banco de dados na tabela usuario foi adicionado mais uma coluana chamado (adm) agora ela fica responsavel por guarda a senha de administrador. 
+segue codigo feito abaixo:
+
+        //quando o usuario é vendedor o sistema pede uma senha de administrador. add 26/02/2018
+        conecta.conexao();
+        conecta.executaSQL("SELECT * FROM users WHERE user ='" + jLabelUsuario.getText() + "'");
+
+        try {
+            //usuario Vendedor
+            conecta.rs.first();
+            db_adm = conecta.rs.getString("adm");
+
+            if (conecta.rs.getInt("level") == 2) {
+
+                // Cria campo onde o usuario entra com a senha
+                JPasswordField password = new JPasswordField(10);
+                password.setEchoChar('*');
+                // Cria um rótulo para o campo
+                JLabel rotulo = new JLabel("É necessario a senha de Administador: ");
+                // Coloca o rótulo e a caixa de entrada numa JPanel:
+                JPanel entUsuario = new JPanel();
+                entUsuario.add(rotulo);
+                entUsuario.add(password);
+                // Mostra o rótulo e a caixa de entrada de password para o usuario fornecer a senha:
+                JOptionPane.showMessageDialog(null, entUsuario, "Acesso restrito", JOptionPane.PLAIN_MESSAGE);
+                // O programa só prossegue quando o usuário clicar o botao de OK do showMessageDialog. 
+                // Aí, é só pegar a senha:
+                // Captura a senha:
+                senha = password.getText();
+	
+                if (senha.equals(db_adm)) {
+
+                    jTextFieldDesconto.setVisible(true);
+                    jLabelDesconto.setVisible(true);
+                    jLabelDescontoReais.setVisible(true);
+                    jTextFieldDesconto.setEnabled(true);
+                    resultado = JOptionPane.showInputDialog("Digite o valor de desconto");
+
+                    //adicionando subtotal avariavel totalGeral
+                    float totalGeral = Float.parseFloat(jTextFieldSubTotal.getText().replace(",", "."));
+
+                    //convertendo o desconto para float
+                    float subtracao = Float.parseFloat(resultado);
+
+                    //subtraindo totalgeral e desconto é guardando valor na variavel totalDesconto!
+                    float totalDesconto = totalGeral - subtracao;
+                    //System.out.println("estou aqui agora!"+totalDesconto);
+
+                    jTextFieldDesconto.setText(String.valueOf(subtracao).replace(".", ","));
+                    jTextFieldValorTotalGeral.setText(String.valueOf(df.format(totalGeral = totalDesconto).replace(".", ",")));
+                    //System.out.println("finalizando metodo!!!"+totalGeral);
+
+                } else {
+
+                    JOptionPane.showMessageDialog(null, "Senha Incorreta", "Atenção", JOptionPane.ERROR_MESSAGE);
+                }
+
+            } else if (conecta.rs.getInt("level") != 2) {
+
+                jTextFieldDesconto.setVisible(true);
+                jLabelDesconto.setVisible(true);
+                jLabelDescontoReais.setVisible(true);
+                jTextFieldDesconto.setEnabled(true);
+                resultado = JOptionPane.showInputDialog("Digite o valor de desconto");
+
+                //adicionando subtotal avariavel totalGeral
+                float totalGeral = Float.parseFloat(jTextFieldSubTotal.getText().replace(",", "."));
+
+                //convertendo o desconto para float
+                float subtracao = Float.parseFloat(resultado);
+
+                //subtraindo totalgeral e desconto é guardando valor na variavel totalDesconto!
+                float totalDesconto = totalGeral - subtracao;
+                //System.out.println("estou aqui agora!"+totalDesconto);
+
+                jTextFieldDesconto.setText(String.valueOf(subtracao).replace(".", ","));
+                jTextFieldValorTotalGeral.setText(String.valueOf(df.format(totalGeral = totalDesconto).replace(".", ",")));
+                //System.out.println("finalizando metodo!!!"+totalGeral);
+
+            }
+        } catch (Exception ex) {
+
+        }

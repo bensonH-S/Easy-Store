@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="clientes" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cf4564cb-0eba-49bb-ae05-9ee55528ea20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT * FROM clientes INNER JOIN bairro ON clientes.id_bairro = bairro.id_bairro]]>
+	</queryString>
+	<field name="id_cliente" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome_cliente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="endereco_cliente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rg_cliente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpf_cliente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_bairro" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefone" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="limite_compra" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="email" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apelido" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sexo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome_bairro" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_cidade" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="86" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement mode="Opaque" x="0" y="0" width="572" height="86" forecolor="#00B5B5" backcolor="#00B5B5" uuid="174ad3a3-6504-46cb-936b-dcc09045a68c"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="3" y="0" width="557" height="86" forecolor="#FFFFFF" backcolor="#00B5B5" uuid="d0aa6e28-bea6-4fdd-b5b0-5eae992f3922"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="32"/>
+				</textElement>
+				<text><![CDATA[Relatório de Clientes]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="78" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="16" width="100" height="20" uuid="1ffafe77-d99d-4c7f-919f-02e79d664ef9"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Nome:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="272" y="17" width="100" height="20" uuid="254b8bf6-dddb-4eaa-b4c5-b30c4f5b8f10"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Rg:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="372" y="17" width="100" height="20" uuid="70c2284b-a34e-4214-96ac-74857d9c1efb"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[CPF:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="472" y="17" width="100" height="20" uuid="9c1b67e4-dd78-44d6-8558-81796e6e63b1"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Telefone:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="37" width="100" height="20" uuid="b60331be-a9cb-4781-afef-f88354275a52"/>
+				<textElement>
+					<font fontName="Verdana" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome_cliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="272" y="36" width="100" height="20" uuid="a05fa9c5-cc02-4e90-9554-07fee1ed151b"/>
+				<textElement>
+					<font fontName="Verdana" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rg_cliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="372" y="36" width="100" height="20" uuid="9f69e612-a497-49d0-953b-c947b8af6222"/>
+				<textElement>
+					<font fontName="Verdana" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpf_cliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="472" y="36" width="100" height="20" uuid="0cd59c5e-4384-4ead-857b-9c1919b6bfd3"/>
+				<textElement>
+					<font fontName="Verdana" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{telefone}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="200" y="17" width="72" height="20" uuid="27cbead9-3baa-4371-9848-3728437d5e97"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Bairro:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="200" y="36" width="72" height="20" uuid="35dc4bce-8a79-40e4-8879-2407f5d52135"/>
+				<textElement>
+					<font fontName="Verdana" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome_bairro}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="100" y="16" width="100" height="20" uuid="a055201b-291b-42dc-a042-35b23e550801"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Endereço:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="36" width="100" height="20" uuid="c6f002dd-0759-44d4-b5dd-1197a92f67f5"/>
+				<textElement>
+					<font fontName="Verdana" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{endereco_cliente}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="3" y="59" width="569" height="1" uuid="a9c69762-c1f5-4786-bdee-ff1ea562420c"/>
+				<graphicElement>
+					<pen lineStyle="Dotted" lineColor="#666666"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="472" y="34" width="100" height="20" uuid="7e3443a5-92d1-4fef-82dd-1a485eebc23a"/>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de "+$V{PAGE_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="3" y="34" width="100" height="20" uuid="986758d2-921e-40ab-af6d-d346ee247c1d"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

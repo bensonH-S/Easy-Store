@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="parcelamento_subreport1" language="groovy" pageWidth="572" pageHeight="752" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="af64b9c7-a176-4128-8734-4d58ca7dc04d">
+	<property name="ireport.zoom" value="4.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     empresa.`nome` AS empresa_nome,
+     empresa.`rua` AS empresa_rua,
+     empresa.`bairro` AS empresa_bairro,
+     empresa.`cidade` AS empresa_cidade,
+     empresa.`telefone` AS empresa_telefone
+FROM
+     `empresa` empresa]]>
+	</queryString>
+	<field name="empresa_nome" class="java.lang.String"/>
+	<field name="empresa_rua" class="java.lang.String"/>
+	<field name="empresa_bairro" class="java.lang.String"/>
+	<field name="empresa_cidade" class="java.lang.String"/>
+	<field name="empresa_telefone" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="120" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="148" height="10" uuid="5d7cec40-b485-4f8f-9655-53ec1078a2b4"/>
+				<textElement textAlignment="Center">
+					<font fontName="Verdana" size="8" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{empresa_nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="31" y="20" width="112" height="10" uuid="e540109f-b7b5-421a-b621-29ce30c04029"/>
+				<textElement textAlignment="Left">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{empresa_rua}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="31" y="30" width="100" height="10" uuid="a9599a34-2b3c-406f-b8e0-5c6e3568b0ad"/>
+				<textElement textAlignment="Left">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{empresa_bairro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="31" y="40" width="100" height="10" uuid="7b883c8a-421f-453a-bc35-73bdcc61393a"/>
+				<textElement textAlignment="Left">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{empresa_cidade}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="30" width="31" height="10" uuid="4013ad26-846e-4014-b4eb-7e27dda4c672"/>
+				<textElement textAlignment="Left">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bairro:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="31" height="10" uuid="6983465c-c8d3-40e4-821e-06137b957ac9"/>
+				<textElement textAlignment="Left">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rua:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="40" width="31" height="10" uuid="6b6337e3-4e7a-477a-bddd-d6e8442384f3"/>
+				<textElement textAlignment="Left">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cidade:]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

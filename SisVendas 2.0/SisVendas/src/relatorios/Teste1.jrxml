@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Teste1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6719b29b-ad1b-40f3-ba95-e641db04a8b5">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\cyro cruz\\Documents\\NetBeansProjects\\CjVendas\\src\\relatorios\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     bairro.`id_bairro` AS bairro_id_bairro,
+     bairro.`nome_bairro` AS bairro_nome_bairro,
+     bairro.`id_cidade` AS bairro_id_cidade
+FROM
+     `bairro` bairro]]>
+	</queryString>
+	<field name="bairro_id_bairro" class="java.lang.Integer"/>
+	<field name="bairro_nome_bairro" class="java.lang.String"/>
+	<field name="bairro_id_cidade" class="java.lang.Integer"/>
+	<title>
+		<band height="79" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="79" uuid="bad038cc-4eb6-4a07-abd5-192a302b7138"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "Teste1_subreport1.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</title>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="4" width="100" height="20" uuid="a81a52a0-b575-459b-8ca8-c9cc14c3a9f2"/>
+				<text><![CDATA[bairro_id_bairro]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="122" y="4" width="100" height="20" uuid="c600a89c-d654-4b9c-98be-adbcd63fa259"/>
+				<textFieldExpression><![CDATA[$F{bairro_id_bairro}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="38" width="100" height="20" uuid="ccdd73fb-4b24-4906-be3e-f34883e5040a"/>
+				<text><![CDATA[bairro_nome_bairro]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="125" y="38" width="100" height="20" uuid="15d20cd5-4b31-4ff9-8055-8c5cd0ae4f21"/>
+				<textFieldExpression><![CDATA[$F{bairro_nome_bairro}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="13" y="78" width="100" height="20" uuid="4e7b80b3-2deb-4cf7-bd22-70a9655cc6db"/>
+				<text><![CDATA[bairro_id_cidade]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="113" y="78" width="100" height="20" uuid="c3505337-2cdf-4c92-94b2-cff4e4a61654"/>
+				<textFieldExpression><![CDATA[$F{bairro_id_cidade}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

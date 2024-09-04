@@ -1,0 +1,126 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 32744 bytes for ChunkPool::allocate
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:273), pid=13564, tid=0x0000000000004154
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_181-b13) (build 1.8.0_181-b13)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.181-b13 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000000001612d800):  JavaThread "C1 CompilerThread2" daemon [_thread_in_native, id=16724, stack(0x0000000018450000,0x0000000018550000)]
+
+Stack: [0x0000000018450000,0x0000000018550000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+Current CompileTask:
+C1:  12180   58       3       java.lang.String::
+[error occurred during error reporting (printing current compile task), id 0xe0000001]
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000000017f56800 JavaThread "Service Thread" daemon [_thread_blocked, id=16852, stack(0x0000000018550000,0x0000000018650000)]
+=>0x000000001612d800 JavaThread "C1 CompilerThread2" daemon [_thread_in_native, id=16724, stack(0x0000000018450000,0x0000000018550000)]
+  0x000000001612a800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=16564, stack(0x0000000018350000,0x0000000018450000)]
+  0x00000000160cd000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=16428, stack(0x0000000017e50000,0x0000000017f50000)]
+  0x00000000160ca000 JavaThread "Attach Listener" daemon [_thread_blocked, id=16424, stack(0x0000000017d50000,0x0000000017e50000)]
+  0x00000000160c8800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=16420, stack(0x0000000017c50000,0x0000000017d50000)]
+  0x00000000160b9000 JavaThread "Finalizer" daemon [_thread_blocked, id=15940, stack(0x0000000017330000,0x0000000017430000)]
+  0x00000000027c1000 JavaThread "Reference Handler" daemon [_thread_blocked, id=15932, stack(0x0000000017230000,0x0000000017330000)]
+  0x00000000026d1000 JavaThread "main" [_thread_in_vm, id=15088, stack(0x00000000025d0000,0x00000000026d0000)]
+
+Other Threads:
+  0x0000000016097800 VMThread [stack: 0x0000000017130000,0x0000000017230000] [id=15752]
+  0x0000000017f58000 WatcherThread [stack: 0x0000000018650000,0x0000000018750000] [id=17344]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 28672K, used 1974K [0x00000000e0400000, 0x00000000e2400000, 0x0000000100000000)
+  eden space 24576K, 8% used [0x00000000e0400000,0x00000000e05eda68,0x00000000e1c00000)
+  from space 4096K, 0% used [0x00000000e2000000,0x00000000e2000000,0x00000000e2400000)
+  to   space 4096K, 0% used [0x00000000e1c00000,0x00000000e1c00000,0x00000000e2000000)
+ ParOldGen       total 65536K, used 0K [0x00000000a0c00000, 0x00000000a4c00000, 0x00000000e0400000)
+  object space 65536K, 0% used [0x00000000a0c00000,0x00000000a0c00000,0x00000000a4c00000)
+ Metaspace       used 3757K, capacity 4646K, committed 4864K, reserved 1056768K
+  class space    used 454K, capacity 482K, committed 512K, reserved 1048576K
+
+Card table byte_map: [0x0000000011b90000,0x0000000011e90000] byte_map_base: 0x000000001168a000
+
+Marking Bits: (ParMarkBitMap*) 0x00000000632c2d00
+ Begin Bits: [0x0000000012490000, 0x0000000013c60000)
+ End Bits:   [0x0000000013c60000, 0x0000000015430000)
+
+Polling page: 0x0000000002290000
+
+CodeCache: size=245760Kb used=1170Kb max_used=1170Kb free=244589Kb
+ bounds [0x00000000027d0000, 0x0000000002a40000, 0x00000000117d0000]
+ total_blobs=304 nmethods=57 adapters=160
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 11.492 Thread 0x000000001612d800 nmethod 53 0x00000000028f0d90 code [0x00000000028f0ee0, 0x00000000028f1070]
+Event: 11.492 Thread 0x000000001612d800   54   !   3       java.io.BufferedReader::readLine (304 bytes)
+Event: 11.496 Thread 0x000000001612d800 nmethod 54 0x00000000028f1150 code [0x00000000028f13e0, 0x00000000028f2ae8]
+Event: 12.164 Thread 0x000000001612d800   55       3       java.util.HashMap::hash (20 bytes)
+Event: 12.164 Thread 0x000000001612d800 nmethod 55 0x00000000028f38d0 code [0x00000000028f3a40, 0x00000000028f3c88]
+Event: 12.169 Thread 0x000000001612d800   56       1       java.io.File::getPath (5 bytes)
+Event: 12.169 Thread 0x000000001612d800 nmethod 56 0x00000000028f3d50 code [0x00000000028f3ea0, 0x00000000028f3fb0]
+Event: 12.172 Thread 0x000000001612d800   57       1       java.nio.Buffer::position (5 bytes)
+Event: 12.172 Thread 0x000000001612d800 nmethod 57 0x00000000028f4790 code [0x00000000028f48e0, 0x00000000028f49f0]
+Event: 12.173 Thread 0x000000001612d800   58       3       java.lang.String::toLowerCase (439 bytes)
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (6 events):
+Event: 1.779 Thread 0x00000000026d1000 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x00000000e0407cb0) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u181\11358\hotspot
+Event: 1.779 Thread 0x00000000026d1000 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x00000000e0407f98) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u181\11358\hotspot\src\share\vm\prim
+Event: 12.173 Thread 0x00000000026d1000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000e0598718) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u181\11358\hotspot\src\share\vm\prims\jvm.cpp, line 1435]
+Event: 12.173 Thread 0x00000000026d1000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000e0598928) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u181\11358\hotspot\src\share\vm\prims\jvm.cpp, line 1435]
+Event: 12.174 Thread 0x00000000026d1000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000e059c598) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u181\11358\hotspot\src\share\vm\prims\jvm.cpp, line 1435]
+Event: 12.174 Thread 0x00000000026d1000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000e059c7a8) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u181\11358\hotspot\src\share\vm\prims\jvm.cpp, line 1435]
+
+Events (10 events):
+Event: 12.175 loading class java/util/ResourceBundle$CacheKey
+Event: 12.175 loading class java/util/ResourceBundle$CacheKey done
+Event: 12.175 loading class java/util/ResourceBundle$LoaderReference
+Event: 12.175 loading class java/util/ResourceBundle$CacheKeyReference
+Event: 12.175 loading class java/util/ResourceBundle$CacheKeyReference done
+Event: 12.175 loading class java/util/ResourceBundle$LoaderReference done
+Event: 12.176 loading class java/util/ResourceBundle$SingleFormatControl
+Event: 12.176 loading class java/util/ResourceBundle$SingleFormatControl done
+Event: 12.176 loading class java/util/LinkedList
+Event: 12.176 loading class java/util/AbstractSequentialList
+
+
+Dynamic libraries:
